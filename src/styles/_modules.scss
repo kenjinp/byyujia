@@ -1,0 +1,281 @@
+//modules
+
+//center padding for consistency of non form elements
+.center-pad {
+  box-sizing: border-box;
+  padding: 0 30px;
+  position: relative;
+  width: 100%;
+}
+
+//input fields
+.input-bar {
+  box-sizing: border-box;
+  display: table;
+  height: 38px;
+  margin-bottom: 20px;
+  position: relative;
+
+  .input-tag {
+    background-color: $tag-gray;
+    border: 1px solid $outline;
+    border-bottom-left-radius: 5px;
+    border-right: 0;
+    border-top-left-radius: 5px;
+    box-sizing: border-box;
+    display: table-cell;
+    height: 100%;
+    padding: 0 20px;
+    position: relative;
+    width: 1%;
+    z-index: 0;
+  }
+
+  .input-tag:last-child {
+    border: 1px solid $outline;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+    padding: 0 0 0 5px;
+    width: auto;
+    z-index: 2;
+
+    input {
+      margin: 10px 5px;
+    }
+
+    label {
+      display: inline;
+      margin-right: 5px;
+    }
+  }
+
+  .input-field {
+    border: 1px solid $outline;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+    box-sizing: border-box;
+    display: table-cell;
+    height: 38px;
+    padding-left: 10px;
+    width: 100%;
+    z-index: 2;
+
+    &:focus {
+      border-color: $light-cta;
+      outline: none;
+    }
+  }
+
+  .input-field:not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    width: 100%;
+  }
+
+  .invalid {
+    border: 1px solid $warning;
+  }
+
+  .valid {
+    border: 1px solid $cta;
+  }
+}
+
+// terms checkbox
+.terms {
+  position: relative;
+
+  label {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 30px 0 45px;
+    text-transform: none;
+  }
+
+  input {
+    float: left;
+    margin: 0 15px 30px;
+    width: 30px;
+  }
+}
+
+//icons
+.icon {
+  height: 30px;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  width: 30px;
+
+  &.fb {
+    background-image: url('../images/fb.png');
+    left: 8px;
+    top: 5px;
+  }
+
+  &.user {
+    background-image: url('../images/user.png');
+  }
+
+  &.lock {
+    background-image: url('../images/lock.png');
+    top: 3px;
+  }
+
+  &.mail {
+    background-image: url('../images/mail.png');
+  }
+}
+
+//call-to-action buttons
+.fb-signup {
+  background-color: $facebook;
+  box-shadow: 0 2px 0 0 $dark-facebook;
+}
+
+.call-to-action {
+  background-color: $cta;
+  box-shadow: 0 2px 0 0 $dark-cta;
+}
+
+.button-link { //use for <a href> <button>'s
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+//page seperator with text
+.seperator {
+  margin: 25px 0 29px;
+  position: relative;
+
+  .seperator-text {
+    background-color: $background;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0 auto;
+    position: relative;
+    text-shadow: 1px 1px 1px $gray;
+    text-transform: uppercase;
+    top: 7px;
+    width: 158px;
+  }
+
+  .seperator-line {
+    background-color: $text;
+    box-shadow: 0 1px 0 0 $gray;
+    display: block;
+    height: 1px;
+    width: 100%;
+  }
+}
+
+.subtext {
+  border-top: 1px solid $gray;
+  box-shadow: 0 -1px 0 0 $text;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 30px 0;
+  padding-top: 28px;
+}
+
+//passStrength
+.pass-strength {
+  @include border-radius(5px);
+  background-color: $light-cta;
+  color: $cta;
+  font-size: 12px;
+  margin-top: 3px;
+  padding: 3px 10px;
+  width: 30%;
+}
+
+//top messages
+.messages {
+  @include border-radius(5px);
+  margin: 10px 0 20px;
+  padding: 11px;
+  text-align: center;
+  transition: all 1s ease-in;
+}
+
+.warning {
+  background-color: $warning-bg;
+  color: $warning;
+}
+
+.success {
+  background-color: $light-cta;
+  color: $cta;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.shown {
+  opacity: 1;
+}
+
+//tooltip
+.tooltip {
+  @include border-radius(5px);
+  bottom: -110%;
+  left: 0;
+  opacity: 0;
+  padding: 8px 12px;
+  position: absolute;
+  transform: translate3d(0, 50px, 0) rotate3d(1, 1, 1, -6deg);
+  transition: opacity .3s, transform .3s;
+  z-index: 100;
+
+  &::after {
+    border-bottom: 10px solid $warning-bg;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top-color: transparent;
+    content: '';
+    height: 0;
+    left: 20px;
+    pointer-events: none;
+    position: absolute;
+    top: -10px;
+    width: 0;
+  }
+
+  &.shown {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width:370px) {
+
+  .input-bar .input-tag:last-child {
+    padding: 0 5px;
+
+    label {
+      display: none;
+    }
+  }
+
+  .terms {
+    //input {
+    //  margin-right: 0;
+    //}
+  }
+}
+
+@media (min-width:481px) and (max-width: 1199px) {
+
+  .fb-signup {
+    top: 7px;
+  }
+}

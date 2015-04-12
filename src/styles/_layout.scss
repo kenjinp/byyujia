@@ -1,0 +1,26 @@
+//layouts
+#center {
+  padding-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+
+// Landscape phones and portrait tablets
+@media (min-width:481px) and (max-width: 767px) {
+
+  #center {
+    margin: 0 auto;
+    max-width: 410px;
+    min-width: 380px;
+    width: 60%;
+  }
+}
+
+// Portrait tablets and medium desktops
+@media (min-width: 768px){
+
+  #center {
+    margin: 0 auto;
+    max-width: 410px;
+  }
+}

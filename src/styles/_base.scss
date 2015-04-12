@@ -1,0 +1,126 @@
+// Variables
+$font-stack: Helvetica, sans-serif;
+
+// Colors
+$background:    #f5f4ef;
+$text:          #74736f;
+$gray:          #b7b7b7;
+$outline:       #bbb5b4;
+$warning:       #fc9929;
+$warning-bg:    #fadb93;
+$cta:           #729b0b;
+$light-cta:     #b9d772;
+$dark-cta:      #374e04;
+$facebook:      #325b99;
+$dark-facebook: #253a58;
+$tag-gray:      #eaeaea;
+$link:          #90cdf5;
+$white:            #fff;
+$shadow-gray:      #ccc;
+
+//mixins
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+//Base
+html {
+  background: linear-gradient(
+      bottom,
+      rgba(0, 0, 0, .3) 0%,
+      rgba(245, 244, 239, 1) 5%
+  );
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  background-color: $background;
+  color: $text;
+  font: 100% $font-stack;
+  padding-top: 30px;
+  text-align: center;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+form {
+  @include border-radius(10px);
+  background-color: $white;
+  margin: 10px;
+  padding: 10px 20px 30px;
+  position: relative;
+  text-align: left;
+
+  label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 3px 0 6px;
+    width: 100%;
+  }
+}
+
+button {
+  @include border-radius(5px);
+  border: 0;
+  box-shadow: 0 2px 0 0 $shadow-gray;
+  box-sizing: border-box;
+  color: $white;
+  display: block;
+  font-size: 14px;
+  height: 35px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: none;
+    top: 2px;
+  }
+}
+
+label {
+  text-transform: uppercase;
+}
+
+// Landscape phones and portrait tablets
+@media (min-width:481px) and (max-width: 991px) {
+
+  body {
+    padding-top: 50px;
+  }
+
+  button {
+    height: 45px;
+  }
+}
+
+// Portrait tablets and up
+@media (min-width: 992px){
+
+  body {
+    padding-top: 70px;
+  }
+
+  button {
+    height: 45px;
+  }
+}
