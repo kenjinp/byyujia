@@ -2,7 +2,7 @@
 $font-stack: Helvetica, sans-serif;
 
 // Colors
-$background:    #f5f4ef;
+$background:    black;
 $text:          #74736f;
 $gray:          #b7b7b7;
 $outline:       #bbb5b4;
@@ -25,11 +25,6 @@ $shadow-gray:      #ccc;
 
 //Base
 html {
-  background: linear-gradient(
-      bottom,
-      rgba(0, 0, 0, .3) 0%,
-      rgba(245, 244, 239, 1) 5%
-  );
   height: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -37,15 +32,18 @@ html {
 }
 
 body {
+  position:relative;
+  height:100%;
   background-color: $background;
-  color: $text;
+  background-image: url('../images/ComingSoon.jpg');
+  background-size:cover;
+  color: $white;
   font: 100% $font-stack;
-  padding-top: 30px;
   text-align: center;
 }
 
 a {
-  color: $link;
+  color: $white;
   text-decoration: none;
 
   &:hover {
@@ -104,10 +102,6 @@ label {
 // Landscape phones and portrait tablets
 @media (min-width:481px) and (max-width: 991px) {
 
-  body {
-    padding-top: 50px;
-  }
-
   button {
     height: 45px;
   }
@@ -115,10 +109,6 @@ label {
 
 // Portrait tablets and up
 @media (min-width: 992px){
-
-  body {
-    padding-top: 70px;
-  }
 
   button {
     height: 45px;
