@@ -4,3 +4,28 @@
   right: -60%;
   width: 400px;
 }
+
+.icon {
+  height: 32px;
+  width: 32px;
+}
+
+.fb {
+  background-image: url('../images/fb.png');
+}
+
+.email {
+  background-image: url('../images/email.png');
+}
+
+@media (min-width:571px) and (max-width: 767px) {
+  .content {
+    right: -40%;
+  }
+}
+
+@media (max-width:570px) {
+  .content {
+    right: 0;
+  }
+}
